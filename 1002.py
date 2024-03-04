@@ -1,4 +1,5 @@
 n = int(input())
+
 lst = ['ling', 'yi', 'er', 'san', 'si', 'wu', 'liu', 'qi', 'ba', 'jiu']
 num = 0
 
