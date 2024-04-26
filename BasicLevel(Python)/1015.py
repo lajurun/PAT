@@ -1,8 +1,5 @@
 n, l, h = map(int, input().split())
-l1 = []
-l2 = []
-l3 = []
-l4 = []
+l1, l2, l3, l4 = [], [], [], []
 
 for j in range(n):
     k, d, c = map(int, input().split())
