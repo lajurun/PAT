@@ -1,6 +1,5 @@
 start, n, k = input().split()
-n = int(n)
-k = int(k)
+n, k = int(n), int(k)
 
 data_input = {}
 for i in range(n):
