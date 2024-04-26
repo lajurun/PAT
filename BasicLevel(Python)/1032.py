@@ -7,7 +7,6 @@ data_dict[max_s] = max_p
 
 for _ in range(n - 1):
     s, p = map(int, input().split())
-
     if data_dict.get(s):
         data_dict[s] += p
     else:
