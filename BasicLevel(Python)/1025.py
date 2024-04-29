@@ -1,9 +1,12 @@
-start, n, k = input().split()
+import sys
+
+
+start, n, k = sys.stdin.readline().split()
 n, k = int(n), int(k)
 
 data_input = {}
 for i in range(n):
-    address, data, next_address = input().split()
+    address, data, next_address = sys.stdin.readline().split()
     data_input[address] = (data, next_address)
 
 
