@@ -1,4 +1,7 @@
-n = int(input())
+import sys
+
+
+n = int(sys.stdin.readline())
 
 data_dict = {}
 
@@ -6,7 +9,7 @@ max_s, max_p = map(int, input().split())
 data_dict[max_s] = max_p
 
 for _ in range(n - 1):
-    s, p = map(int, input().split())
+    s, p = map(int, sys.stdin.readline().split())
     if data_dict.get(s):
         data_dict[s] += p
     else:
