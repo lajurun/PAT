@@ -1,36 +1,36 @@
-# 此题python解不了，测试能过，提交全部非零返回
-# 大佬测试：https://blog.csdn.net/q839219286/article/details/93635134
+# 源代码地址：https://blog.csdn.net/u012949658/article/details/107474885
+
+import sys
 
 
-def handle_string(s):
+def handle(s):
     l = []
-    tag = False
-    res = ""
-    for i in s:
-        if tag:
-            if i == "]":
-                l.append(res)
-                tag = False
-                res = ""
-            else:
-                res += i
-        if i == "[" and not tag:
-            tag = True
+    res = bytes()
+    for i in range(len(s) - 1):
+        if s[i:i + 1] == b"[":
+            res = bytes()
             continue
+        if s[i:i + 1] == b"]":
+            l.append(res)
+            continue
+        res += s[i:i + 1]
     return l
 
 
-hands = handle_string(input())
-eyes = handle_string(input())
-mouth = handle_string(input())
-length_hands = len(hands)
-length_eyes = len(eyes)
-length_mouth = len(mouth)
+hands = handle(sys.stdin.buffer.readline())
+eyes = handle(sys.stdin.buffer.readline())
+mouth = handle(sys.stdin.buffer.readline())
 
-n = int(input())
-for _ in range(n):
-    l = list(map(lambda x: int(x)-1, input().split()))
-    if l[0] >= length_hands or l[4] >= length_hands or l[1] >= length_eyes or l[3] >= length_eyes or l[2] >= length_mouth:
-        print("Are you kidding me? @\/@")
-    else:
-        print("{}({}{}{}){}".format(hands[l[0]], eyes[l[1]], mouth[l[2]], eyes[l[3]], hands[l[4]]))
+k = int(input())
+for _ in range(k):
+    l = []
+    try:
+        for i in input().split():
+            i = int(i) - 1
+            if i < 0:
+                break
+            l.append(i)
+        res = hands[l[0]] + b"(" + eyes[l[1]] + mouth[l[2]] + eyes[l[3]] + b")" + hands[l[4]] + b"\n"
+        sys.stdout.buffer.write(res)
+    except:
+        sys.stdout.buffer.write(b"Are you kidding me? @\/@\n")
