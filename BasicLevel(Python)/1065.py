@@ -19,4 +19,3 @@ if res:
     print(*res)
 else:
     print(0)
-    
